@@ -1,601 +1,586 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astute Beta Server - Tải Miễn Phí</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Astute Beta Server</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#050505;
-    color:#fff;
-    overflow-x:hidden;
+background:#111;
+color:#fff;
+overflow-x:hidden;
 }
-
-/* ===== BACKGROUND ===== */
-
-.bg{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at top left,#00ffcc22,transparent 40%),
-    radial-gradient(circle at bottom right,#00aaff22,transparent 40%),
-    #050505;
-    z-index:-1;
-}
-
-/* ===== ADS ===== */
-
-.top-ad,
-.mid-ad,
-.bottom-ad{
-    width:95%;
-    margin:15px auto;
-    border:2px dashed #00e0ff;
-    background:#0f0f0f;
-    border-radius:15px;
-    text-align:center;
-    padding:15px;
-    color:#00e0ff;
-    font-weight:700;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:.6;
-    }
-}
-
-/* ===== CONTAINER ===== */
 
 .page{
-    display:none;
-    min-height:100vh;
-    padding:30px 15px;
+display:none;
+min-height:100vh;
+padding:20px;
 }
 
 .active{
-    display:block;
+display:block;
+animation:fade .5s ease;
 }
 
-.box{
-    max-width:430px;
-    margin:auto;
-    background:#111;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid #222;
-    box-shadow:0 0 30px #00c3ff33;
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.logo{
-    text-align:center;
-    font-size:32px;
-    font-weight:700;
-    margin-bottom:10px;
-    color:#00d9ff;
+.topbar{
+background:linear-gradient(45deg,#ff7300,#ff9d00);
+padding:18px;
+border-radius:18px;
+text-align:center;
+font-size:26px;
+font-weight:700;
+box-shadow:0 0 25px rgba(255,140,0,.5);
+margin-bottom:20px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#bbb;
-    margin-bottom:25px;
+.card{
+background:#1c1c1c;
+border:1px solid rgba(255,255,255,.08);
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 0 20px rgba(0,0,0,.4);
 }
 
-.robot-box{
-    background:#181818;
-    border:2px solid #333;
-    border-radius:12px;
-    padding:18px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
-    transition:.3s;
+.robot{
+width:130px;
+height:130px;
+background:linear-gradient(45deg,#ff7300,#ffb700);
+margin:auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+box-shadow:0 0 30px rgba(255,140,0,.6);
 }
 
-.robot-box:hover{
-    border-color:#00d9ff;
+.center{
+text-align:center;
 }
 
-.robot-check{
-    width:28px;
-    height:28px;
+.btn{
+display:inline-block;
+background:linear-gradient(45deg,#ff7300,#ffb300);
+padding:14px 30px;
+border-radius:50px;
+font-weight:700;
+text-decoration:none;
+color:#fff;
+cursor:pointer;
+border:none;
+margin-top:15px;
+transition:.3s;
+box-shadow:0 0 15px rgba(255,140,0,.5);
 }
 
-.robot-text{
-    font-size:18px;
+.btn:hover{
+transform:scale(1.05);
 }
 
-.verify-btn,
-.sub-btn,
-.download-btn{
-    width:100%;
-    border:none;
-    border-radius:12px;
-    padding:16px;
-    margin-top:20px;
-    cursor:pointer;
-    font-size:17px;
-    font-weight:700;
-    transition:.3s;
+.verify-box{
+margin-top:25px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:#222;
+padding:16px;
+border-radius:14px;
 }
 
-.verify-btn{
-    background:#00d9ff;
-    color:#000;
+input[type=checkbox]{
+width:25px;
+height:25px;
 }
 
-.verify-btn:hover{
-    transform:scale(1.03);
+.sub-box{
+background:#222;
+padding:18px;
+border-radius:16px;
+margin-top:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
 }
 
-/* ===== SUB BUTTON ===== */
-
-.sub-card{
-    background:#181818;
-    padding:18px;
-    border-radius:15px;
-    margin-bottom:18px;
-    border:1px solid #222;
+.done{
+background:#00b74a !important;
 }
 
-.sub-title{
-    font-size:18px;
-    margin-bottom:10px;
+.stats{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:15px;
 }
 
-.sub-btn{
-    background:red;
-    color:#fff;
+.stat{
+background:#222;
+padding:14px;
+border-radius:15px;
+min-width:120px;
+text-align:center;
 }
 
-.sub-btn.done{
-    background:#00cc66;
-    color:#fff;
+.ad{
+height:100px;
+border:2px dashed #ff8c00;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:20px 0;
+font-weight:700;
+background:#1d1d1d;
+color:#ff9d00;
 }
 
-.unlock-btn{
-    background:#00d9ff;
-    color:#000;
-}
-
-/* ===== PAGE 3 ===== */
-
-.hero{
-    text-align:center;
-    padding:30px 20px;
-}
-
-.hero h1{
-    font-size:36px;
-    color:#00d9ff;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#bbb;
-}
-
-.banner{
-    width:100%;
-    height:180px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#00d9ff,#0055ff);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:35px;
-    font-weight:700;
-    margin-top:25px;
-}
-
-.feature-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
-
-.feature{
-    background:#111;
-    padding:20px;
-    border-radius:18px;
-    border:1px solid #222;
-}
-
-.feature h3{
-    color:#00d9ff;
-    margin-bottom:10px;
-}
-
-.download-section{
-    margin-top:40px;
-    text-align:center;
+.download-box{
+background:#181818;
+padding:20px;
+border-radius:18px;
+margin-top:20px;
+line-height:1.8;
 }
 
 .download-btn{
-    background:#00ff99;
-    color:#000;
-    font-size:20px;
+width:100%;
+padding:16px;
+font-size:18px;
+border:none;
+border-radius:16px;
+background:linear-gradient(45deg,#ff7300,#ffb300);
+color:#fff;
+font-weight:700;
+cursor:pointer;
+margin-top:20px;
 }
 
-.download-btn:hover{
-    transform:scale(1.05);
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:999;
 }
 
-.countdown{
-    margin-top:15px;
-    color:#00ff99;
-    font-size:20px;
-    font-weight:700;
+.popup-content{
+background:#1b1b1b;
+padding:25px;
+border-radius:20px;
+max-width:400px;
+width:100%;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
 }
 
-/* ===== FOOTER ===== */
-
-.footer{
-    margin-top:50px;
-    text-align:center;
-    color:#777;
-    padding-bottom:40px;
+.timer{
+font-size:50px;
+font-weight:700;
+color:#ff9800;
+margin:20px 0;
 }
 
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:28px;
+.video{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:18px;
+margin-top:20px;
 }
 
-.banner{
-    font-size:28px;
+.video iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
 }
 
+footer{
+text-align:center;
+padding:30px;
+color:#aaa;
+}
+
+.badge{
+display:inline-block;
+padding:7px 15px;
+background:#ff7b00;
+border-radius:50px;
+font-size:13px;
+margin-top:10px;
+}
+
+@media(max-width:600px){
+.topbar{
+font-size:22px;
+}
 }
 </style>
 </head>
 <body>
 
-<div class="bg"></div>
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
 
-<!-- ================= PAGE 1 ================= -->
-
-<section class="page active" id="page1">
-
-<div class="top-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
-
-
+<div class="topbar">
+🔥 ASTUTE BETA SERVER
 </div>
 
-<div class="box">
+<div class="card center">
 
-<div class="logo">
-ASTUTE BETA SERVER
+<div class="robot">
+🤖
 </div>
 
-<div class="subtitle">
-Xác minh để tiếp tục tải xuống
+<h2 style="margin-top:20px;">Xác minh bảo mật</h2>
+
+<p style="margin-top:10px;color:#bbb;">
+Vui lòng xác minh bạn không phải robot để tiếp tục tải Astute Beta Server.
+</p>
+
+<div class="verify-box">
+<input type="checkbox" id="robotCheck">
+<label>Tôi không phải người máy</label>
 </div>
 
-<div class="robot-box" onclick="checkRobot()">
-<input type="checkbox" class="robot-check" id="robotCheck">
-<div class="robot-text">
-Tôi không phải là robot
-</div>
-</div>
-
-<button class="verify-btn" onclick="nextPage1()">
+<button class="btn" onclick="verifyRobot()">
 TIẾP TỤC
 </button>
 
 </div>
 
-<div class="bottom-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+<div class="ad">
+VỊ TRÍ QUẢNG CÁO 728x90
 </div>
 
-</section>
-
-<!-- ================= PAGE 2 ================= -->
-
-<section class="page" id="page2">
-
-<div class="top-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
 </div>
 
-<div class="box">
+<!-- PAGE 2 -->
+<div class="page" id="page2">
 
-<div class="logo">
+<div class="topbar">
+🔓 SUB TO UNLOCK
+</div>
+
+<div class="card center">
+
+<h2>Mở khóa link tải</h2>
+
+<p style="color:#bbb;margin-top:10px;">
+Sub 2 kênh YouTube để mở khóa tải xuống.
+</p>
+
+<div class="sub-box">
+
+<div>
+<h3>Kênh YouTube #1</h3>
+<p style="color:#aaa;font-size:14px;">Review Free Fire</p>
+</div>
+
+<button class="btn subbtn" id="sub1"
+onclick="subDone(1)">
+SUBSCRIBE
+</button>
+
+</div>
+
+<div class="sub-box">
+
+<div>
+<h3>Kênh YouTube #2</h3>
+<p style="color:#aaa;font-size:14px;">Astute Beta Official</p>
+</div>
+
+<button class="btn subbtn" id="sub2"
+onclick="subDone(2)">
+SUBSCRIBE
+</button>
+
+</div>
+
+<button class="btn" id="unlockBtn"
+style="display:none;"
+onclick="goPage(3)">
 MỞ KHÓA LINK TẢI
-</div>
-
-<div class="subtitle">
-Sub 2 kênh YouTube để mở khóa
-</div>
-
-<div class="sub-card">
-<div class="sub-title">
-</div>
-
-<button class="sub-btn" id="sub1" onclick="subChannel(1)">
-SUBSCRIBE KÊNH 1
-</button>
-</div>
-
-<div class="sub-card">
-<div class="sub-title">
-</div>
-
-<button class="sub-btn" id="sub2" onclick="subChannel(2)">
-SUBSCRIBE KÊNH 2
-</button>
-</div>
-
-<button class="verify-btn unlock-btn" onclick="unlockDownload()">
-MỞ KHÓA DOWNLOAD
 </button>
 
 </div>
 
-<div class="mid-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
-</div>
-
-</section>
-
-<!-- ================= PAGE 3 ================= -->
-
-<section class="page" id="page3">
-
-<div class="top-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
-</div>
-
-<div class="hero">
-<h1>ASTUTE BETA SERVER</h1>
-<p>Free Fire Beta Server APK - Tải miễn phí phiên bản mới nhất</p>
-
-<div class="banner">
-ASTUTE BETA
-</div>
-</div>
-
-<div class="mid-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
-</div>
-
-<div class="feature-grid">
-
-<div class="feature">
-<h3>⚡ Tăng FPS</h3>
-<p>Tối ưu hiệu năng chơi game mượt hơn.</p>
-</div>
-
-<div class="feature">
-<h3>🔥 Skin Mới</h3>
-<p>Mở khóa nhiều skin và hiệu ứng đẹp.</p>
-</div>
-
-<div class="feature">
-<h3>🚀 Anti Lag</h3>
-<p>Giảm giật lag cho điện thoại yếu.</p>
-</div>
-
-<div class="feature">
-<h3>🎯 Fix Delay</h3>
-<p>Tăng độ nhạy và phản hồi nhanh hơn.</p>
+<div class="ad">
+VỊ TRÍ QUẢNG CÁO ADSENSE
 </div>
 
 </div>
 
-<div class="download-section">
+<!-- PAGE 3 -->
+<div class="page" id="page3">
 
-<div class="top-ad">
-<script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
+<div class="topbar">
+🚀 TẢI ASTUTE BETA SERVER
 </div>
 
-<button class="download-btn" onclick="startDownload()">
-TẢI XUỐNG NGAY
+<div class="card center">
+
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+width="100"
+style="filter:drop-shadow(0 0 15px orange);">
+
+<h2 style="margin-top:15px;">
+Astute Beta Server APK
+</h2>
+
+<div class="badge">
+Phiên bản mới nhất 2026
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>4.9⭐</h3>
+<p>Đánh giá</p>
+</div>
+
+<div class="stat">
+<h3>2.8M+</h3>
+<p>Lượt tải</p>
+</div>
+
+<div class="stat">
+<h3>158K</h3>
+<p>Đang dùng</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="ad">
+CHÈN QUẢNG CÁO VIDEO / BANNER
+</div>
+
+<div class="download-box">
+
+<h2>Hướng dẫn cài đặt</h2>
+
+<p>
+Đầu tiên, tải xuống và cài đặt Astute Beta cho Android.
+</p>
+
+<p>
+Trong tập tin này không cần ZArchiver APK.
+</p>
+
+<p>
+Tải xuống trực tiếp và cài đặt, sau đó chơi phiên bản Astute Beta APK mới nhất.
+</p>
+
+<p>
+Tiếp theo, tải xuống và cài đặt ZArchiver APK từ Play Store.
+</p>
+
+<p>
+Quá trình này sẽ mất một chút thời gian.
+</p>
+
+<p>
+Sau đó, mở máy chủ Astute Beta. Bạn sẽ nhận được tiền và xu không giới hạn miễn phí, và có thể chia sẻ chúng với bạn bè.
+</p>
+
+<p>
+Máy chủ Astute Beta là phiên bản thử nghiệm đặc biệt của Free Fire cho phép người chơi thử các tính năng mới trước khi chúng được phát hành chính thức.
+</p>
+
+<p>
+Với máy chủ Astute Beta, người dùng có thể khám phá vũ khí mới, chế độ chơi, cài đặt đồ họa và các công cụ sắp ra mắt khác.
+</p>
+
+<p>
+Điều này giúp người chơi học hỏi và làm quen với các tính năng mới trước khi chúng xuất hiện trong trò chơi chính thức.
+</p>
+
+<p>
+Mục đích chính của máy chủ Astute Beta là hỗ trợ các nhà phát triển xác định lỗi, sự cố và các vấn đề trong lối chơi.
+</p>
+
+<p>
+Một điểm tuyệt vời khác của máy chủ Astute Beta là hiệu năng mượt mà và giao diện dễ sử dụng.
+</p>
+
+<p>
+Nhìn chung, máy chủ Astute Beta an toàn, hữu ích và là một cách tuyệt vời để người chơi được trải nghiệm các bản cập nhật Free Fire sớm.
+</p>
+
+<button class="download-btn" onclick="openPopup()">
+⬇️ TẢI XUỐNG NGAY
 </button>
 
-<div class="countdown" id="countdown"></div>
+</div>
+
+<div class="card">
+
+<h2>🎥 Video hướng dẫn</h2>
+
+<div class="video">
+<iframe 
+src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+frameborder="0"
+allowfullscreen>
+</iframe>
+</div>
 
 </div>
 
-<div class="bottom-ad">
+<div class="ad">
+VỊ TRÍ QUẢNG CÁO POPUP / SCRIPT
+</div>
+
+<footer>
+© 2026 Astute Beta Server Landing Page
+</footer>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<h2>⏳ Đang chuẩn bị link tải</h2>
+
+<p style="color:#bbb;margin-top:10px;">
+Vui lòng chờ 30 giây để mở khóa tải xuống.
+</p>
+
+<div class="ad" style="height:120px;">
+CHÈN QUẢNG CÁO TẠI ĐÂY
+</div>
+
+<div class="timer" id="timer">
+30
+</div>
+
+<a href="#"
+id="realDownload"
+class="btn"
+style="display:none;">
+TẢI APK NGAY
+</a>
+
+</div>
+
+</div>
+
 <script>
-  atOptions = {
-    'key' : '560994876ae0ec6965e62b4dffe2b079',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/560994876ae0ec6965e62b4dffe2b079/invoke.js"></script>
-</div>
 
-<div class="footer">
-© 2026 Astute Beta Server Việt Nam
-</div>
+function goPage(page){
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
 
-</section>
-
-<script>
-
-let subDone1 = false;
-let subDone2 = false;
-
-function checkRobot(){
-    document.getElementById("robotCheck").checked = true;
+document.getElementById('page'+page).classList.add('active');
+window.scrollTo(0,0);
 }
 
-function nextPage1(){
+function verifyRobot(){
 
-    let checked = document.getElementById("robotCheck").checked;
+let check=document.getElementById('robotCheck');
 
-    if(!checked){
-        alert("Vui lòng xác minh!");
-        return;
-    }
-
-    document.getElementById("page1").classList.remove("active");
-    document.getElementById("page2").classList.add("active");
+if(check.checked){
+goPage(2);
+}else{
+alert("Vui lòng xác minh không phải robot!");
 }
-
-function subChannel(id){
-
-    if(id === 1){
-
-        window.open("https://www.youtube.com/@Phamdangkhoa2024", "_blank");
-
-        subDone1 = true;
-
-        let btn = document.getElementById("sub1");
-
-        btn.innerHTML = "ĐÃ HOÀN THÀNH";
-        btn.classList.add("done");
-
-    }
-
-    if(id === 2){
-
-        window.open("https://www.youtube.com/@AstuteBeta-vn", "_blank");
-
-        subDone2 = true;
-
-        let btn = document.getElementById("sub2");
-
-        btn.innerHTML = "ĐÃ HOÀN THÀNH";
-        btn.classList.add("done");
-
-    }
 
 }
 
-function unlockDownload(){
+let sub1=false;
+let sub2=false;
 
-    if(subDone1 && subDone2){
+function subDone(num){
 
-        document.getElementById("page2").classList.remove("active");
-        document.getElementById("page3").classList.add("active");
+if(num===1){
+window.open("https://youtube.com/","_blank");
+document.getElementById('sub1').innerHTML="✅ HOÀN THÀNH";
+document.getElementById('sub1').classList.add('done');
+sub1=true;
+}
 
-    }else{
+if(num===2){
+window.open("https://youtube.com/","_blank");
+document.getElementById('sub2').innerHTML="✅ HOÀN THÀNH";
+document.getElementById('sub2').classList.add('done');
+sub2=true;
+}
 
-        alert("Bạn cần SUB đủ 2 kênh!");
-
-    }
+if(sub1 && sub2){
+document.getElementById('unlockBtn').style.display="inline-block";
+}
 
 }
 
-function startDownload(){
+function openPopup(){
 
-    let time = 10;
+document.getElementById('popup').style.display='flex';
 
-    let countdown = document.getElementById("countdown");
+let time=30;
 
-    countdown.innerHTML = "Đang Tạo Link Tải: " + time + "s";
+let timer=setInterval(()=>{
 
-    let timer = setInterval(()=>{
+time--;
 
-        time--;
+document.getElementById('timer').innerHTML=time;
 
-        countdown.innerHTML = "Đang Tạo Link Tải: " + time + "s";
+if(time<=0){
 
-        if(time <= 0){
+clearInterval(timer);
 
-            clearInterval(timer);
+document.getElementById('timer').innerHTML="✅ HOÀN TẤT";
 
-            countdown.innerHTML = "✅ Link Tải Đã Sẵn Sàng!";
+document.getElementById('realDownload').style.display='inline-block';
 
-            window.location.href = "https://link4m.com/YIzzeR";
+document.getElementById('realDownload').href="https://example.com";
 
-        }
+}
 
-    },1000);
+},1000);
 
 }
 
 </script>
-<script src="https://pl29375702.effectivecpmnetwork.com/09/10/0e/09100e35062b20afa081ed2f80a366be.js"></script>
-<script src="https://pl29375851.effectivecpmnetwork.com/06/57/b5/0657b51235b10d62094924af1d790e22.js"></script>
 
 </body>
 </html>
